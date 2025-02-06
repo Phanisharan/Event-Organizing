@@ -1,0 +1,50 @@
+{% extends 'Base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Photography
+{% endblock %}
+
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'css/details/Viewdetail4.css' %}">
+{% endblock %}
+
+{% block body %}
+
+    <header>
+        <h1>Event Photography</h1>
+        <p>Capturing Moments, Creating Memories</p>
+    </header>
+
+    <div id="para">
+        {{ photography.description }}
+        <!-- At HK Events, we believe that every event tells a unique story, and our photography services are dedicated to capturing those unforgettable moments. Our talented photographers specialize in a wide range of events, from weddings and corporate gatherings to birthday celebrations and community festivals. With an eye for detail and a passion for storytelling, we ensure that each photograph reflects the emotions, joy, and essence of your special day. Our commitment to excellence means we use the latest techniques and equipment to deliver stunning, high-quality images that you can cherish for a lifetime. Let us help you preserve your memories in a way that is as vibrant and dynamic as the events themselves. -->
+    </div>
+    
+    <section class="gallery">
+        {% for data in photography %}
+        <div class="gallery-item">
+            <img src="{{ data.image.url }}" alt="Event Photo 3">
+        </div>
+        {% endfor %}
+        <!-- <div class="gallery-item">
+            <img src="{% static 'images/pic1.jpg' %}" alt="Event Photo 1">
+        </div>
+        <div class="gallery-item">
+            <img src="{% static 'images/pic2.jpg' %}" alt="Event Photo 2">
+        </div>
+        <div class="gallery-item">
+            <img src="{% static 'images/pic3.jpg' %}" alt="Event Photo 3">
+        </div>
+        <div class="gallery-item">
+            <img src="{% static 'images/pic4.jpg' %}" alt="Event Photo 4">
+        </div> -->
+    </section>
+
+    <footer>
+        <a href="{% url 'Eventapp:contact' %}"> <button class="book-now">Contact Us</button> </a>
+    </footer>
+
+{% endblock %}

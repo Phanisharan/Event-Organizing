@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: fancy;
+    src: url(../../fonts/Cookie-Regular.ttf);
+}
+
+@font-face {
+    font-family: font3;
+    src: url(../../fonts/PoiretOne-Regular.ttf);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    height: 400px;
+    text-align: center;
+    padding: 50px 20px;
+    background-image: url(../../images/photography.jpg);
+    background-size: 100%;
+    color: white;
+    animation: fadeIn 1s ease-in;
+}
+
+header h1 {
+    font-size: 7em;
+    margin-top: 4%;
+    margin-left: 40%;
+    font-family: fancy;
+    text-shadow: 4px 4px 4px black;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-left: 40%;
+}
+
+#para{
+    font-family: font3;
+    padding: 5%;
+    text-align: center;
+    font-weight:900;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+
+footer {
+    position: fixed; 
+    bottom: 20px;
+    left: 20px; 
+    z-index: 1000;
+}
+
+.book-now {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.book-now:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

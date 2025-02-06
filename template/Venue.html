@@ -1,0 +1,137 @@
+{% extends 'Base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Wedding Stories
+{% endblock %}
+
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'css/Venue.css' %}">
+{% endblock %}
+
+{% block body %}
+
+        <div id="div1">
+            <h1>Creating Unforgettable Moments with HK Events</h1>
+            <p>
+                - From intimate ceremonies to grand celebrations.
+            </p>
+        </div>
+
+        <div id="div2">
+            <div id="div2_child1">
+                <img id="diamond2" src="{% static 'images/bride-bridegroom1.jpg' %}" alt="" >
+            </div>
+            <div id="div2_child2">
+                <div id="pre1">
+                    Begin Your Dream Day with HK EventsYour special day with HK Events can commence with a breathtaking ceremony on our exclusive sunset wedding terrace, offering panoramic views of the serene Aegean Sea and the picturesque village of Oia. Bathed in the warm glow of the Mediterranean sun, you and your beloved can exchange vows in the presence of close friends and family. Following the ceremony, capture timeless moments amidst the enchanting backdrop, exploring charming windmills, iconic blue domes, and other hidden gems that add a touch of magic to your memories.
+                    Seamless and Elegant Reception by HK EventsYour reception seamlessly follows in the same enchanting location, thoughtfully adorned to reflect your unique style and preferences. The venue, transformed into a haven of elegance and charm, sets the stage for an unforgettable celebration. Indulge in a gourmet feast, dance under the stars, and create memories that will be cherished forever.
+                    Customized Packages by HK EventsTo make your dream wedding a reality, HK Events offers three exclusive packages tailored to meet your specific needs and desires. Each package is designed to provide you with a stress-free, personalized experience, ensuring every detail is perfect. Whether you desire an intimate gathering or a grand celebration, HK Events is here to bring your vision to life.
+                    Is this more in line with what you're looking for? Let me know if there's anything else you'd like to add or change!
+                </div>
+            </div>
+        </div>
+
+        <div id="linediv">
+            <hr id="hr1" style="width: 3px; height: 150px; transform: rotate(180deg);">
+            <span id="span_p">POINTS</span>
+            <p id="p1">Here’s a more concise presentation of the packages for The Love Cave:</p>
+        </div>
+
+
+        <div id="package">
+            {% for package in packages %}
+            <div class="pack" id="{{ package.id }}" onclick="showOverlay('{{ package.id }}')" data-title="{{ package.title }}" data-description="{{ package.detail_description }}" data-price="${{ package.price }}">
+                <div class="headings"><p class="ol_pa">{{ package.title }}</p></div>
+                <p class="day_venue">{{ package.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <div id="overlay" class="overlay" style="display: none;">
+            <div class="overlay-content" id="overlay-content"></div>
+        </div>
+
+        
+
+        <div id="find">
+            <p>To Know more combinations contact for  brochure that can be tailor-made to suit your preferences. We offer flexible options to ensure your special day is exactly as you envision it!
+            </p>
+        </div>
+
+        
+        <a href="{% url 'Eventapp:contact' %}"><button id="contact_us_button">Contact Us</button></a>
+
+        <div id="linediv">
+            <hr id="hr1" style="width: 3px; height: 150px; transform: rotate(180deg);">
+            <span id="span2_p">SPECIAL MOMENTS THAT LIVE FOREVER!
+            </span>
+        </div>
+
+
+        <div id="pic_container">
+            {% for couple_moment in couple_moments %}
+                <div class="pic_wed">
+                    <img class="columnpics" src="{{ couple_moment.couple_image.url }}" alt="">
+                    <a href="{% url 'Eventapp:wedding_gallery' couple_moment.id %}">
+                        <span class="event_lists">{{ couple_moment.names }}</span>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+
+    <div class="slideshow">
+        {% for card in card_data %}
+            <div class="slide">
+                <div class="card image-card">
+                    <img src="{{ card.card_images.url }}"  alt="Wedding Image">
+                </div>
+                <div class="card content-card">
+                    <p class="card-contnet date">- {{ card.marraige_date }} -</p>
+                    <p class="card-content">
+                        {{ card.card_text }}
+                    </p>
+                    <p class="card-contnet couple-names">- {{ card.couple_names }} -</p>
+                </div>
+            </div>
+        {% endfor %}
+    
+    </div>
+    
+
+
+    <script>
+        function showOverlay(packageId) {
+            const overlay = document.getElementById('overlay');
+            const content = document.getElementById('overlay-content');
+            const selectedPackage = document.getElementById(packageId);
+        
+            const title = selectedPackage.getAttribute('data-title');
+            const description = selectedPackage.getAttribute('data-description');
+            const price = selectedPackage.getAttribute('data-price');
+        
+            
+            content.innerHTML = `
+                <h2>${title}</h2>
+                <p>${description}</p>
+                <button class="btn btn-green">Price: ${price}</button>
+                <a href="{% url 'Eventapp:contact' %}" class="btn">Contact Us</a>
+            `;
+            overlay.style.display = 'flex';
+            title.style.letterSpacing = '0.80rem';
+
+        }
+        
+        window.onclick = function(event) {
+            const overlay = document.getElementById('overlay');
+            if (event.target === overlay) {
+                overlay.style.display = 'none';
+            }
+        }
+    </script>
+
+{% endblock %}

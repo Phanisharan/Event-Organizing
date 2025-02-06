@@ -1,0 +1,168 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: fancy;
+    src: url(../../fonts/Cookie-Regular.ttf);
+}
+
+
+@font-face {
+    font-family: font3;
+    src: url(../../fonts/PoiretOne-Regular.ttf);
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    height: 20rem;
+    text-align: center;
+    padding: 50px 0;
+    background-image: url(../../images/occasionpage.jpg);
+    background-size: cover;
+    color: white;
+}
+
+h1 {
+    font-size: 6em;
+    padding: 50px;
+    font-family: fancy;
+    text-shadow: 1px 1px black;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+#context {
+    font-family: font3;
+    padding: 5%;
+    text-align: center;
+    font-weight:900;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.occasion-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.occasion-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.occasion-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.occasion-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+
+footer {
+    position: fixed; 
+    bottom: 20px;
+    left: 20px; 
+    z-index: 1000;
+}
+
+.book-now {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.book-now:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 4em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    #context {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .occasion-card {
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 15rem;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    #context {
+        font-size: 1rem;
+    }
+
+    .occasion-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .occasion-card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .occasion-card {
+        width: 100%; 
+    }
+}

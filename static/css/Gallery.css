@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: fancy;
+    src: url(../fonts/Cookie-Regular.ttf);
+}
+
+@font-face {
+    font-family: font2;
+    src: url(../fonts/Aboreto-Regular.ttf);
+}
+
+@font-face {
+    font-family: font3;
+    src: url(../fonts/PoiretOne-Regular.ttf);
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-y: auto; 
+    overflow-x: hidden; 
+}
+
+header {
+    padding: 2em 0;
+    height: 100vh;
+    text-align: center;
+    background-image: url(../images/gallerywedding.png);
+    background-size: 100% auto;  /* Maintain aspect ratio */
+    background-repeat: no-repeat;
+    background-position: top center;  /* Start image from the top */
+}
+
+
+#heading {
+    width: 30%;
+    height: 50%;
+    position: relative;
+    top: 25%;
+    left: 35%;
+    color: rgb(0, 0, 0);
+    
+}
+
+#heading_m{
+    font-family: fancy;
+    font-size: 5rem;
+    line-height: 4rem;
+    letter-spacing: 0.2rem;
+    color: palevioletred;
+    text-shadow: 2px -2px 1px rgb(9, 9, 9);
+}
+
+#heading1 {
+    text-align: center;
+    padding-top: 7rem;
+    font-size: 1.5rem;
+    font-family: font2;
+    text-shadow: 1px -1px 1px white;
+    color: black;
+}
+
+#data1 {
+    text-align: center;
+    padding-top: 2rem;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#data2 {
+    padding-top: 2rem;
+    text-align: center;
+    width: 70%;
+    position: relative;
+    left: 15%;
+    font-family: font3;
+    font-weight:900;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+}
+
+main {
+    padding: 150px 0px 0px 200px;
+    width: 90%;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item {
+    display: inline-block;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    vertical-align: top; /* Ensure the container aligns with the top of the image */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+#image_container {
+    /* border: 1px solid hotpink; */
+    padding: 2em 0;
+    height: 400px;
+    background-image: url(../images/hands.jpg);
+    background-size: cover;
+    margin: 7rem auto;
+}
+
+#text {
+    padding: 7.5rem 0;
+    text-align: center;
+    color: white;
+    font-size: 6rem;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 2px -2px 1px black;
+    font-family: fancy;
+}
+
+
+@media (max-width: 1200px) {
+    #heading {
+        width: 50%;
+        left: 25%;
+    }
+
+    main {
+        padding: 100px 0px 0px 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    #heading {
+        width: 70%;
+        left: 15%;
+    }
+
+    main {
+        padding: 50px 0px 0px 20px;
+    }
+
+    #data2 {
+        width: 90%;
+        left: 5%;
+    }
+
+    #text {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 300px;
+    }
+
+    #text {
+        font-size: 30px;
+    }
+
+    #heading1 {
+        font-size: 1.2rem;
+    }
+
+    #data1, #data2 {
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    #heading {
+        width: 90%;
+        left: 5%;
+    }
+
+    #text {
+        font-size: 25px;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}

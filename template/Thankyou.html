@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="{% static 'css/Thankyou.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="thank-you-box">
+        <h1>Thank You!</h1>
+        <p class="message">We have received your message and will get back to you soon. 💌</p>
+        <p class="quote">An event is not just an occasion; it’s an opportunity to create unforgettable moments, connect people, and bring ideas to life.</p>
+        <a href="{% url 'Eventapp:home' %}" class="home-link">← Back to Home</a>
+    </div>
+</div>
+</body>
+</html>

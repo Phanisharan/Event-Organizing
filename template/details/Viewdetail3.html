@@ -1,0 +1,42 @@
+{% extends 'Base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Decoration
+{% endblock %}
+
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'css/details/Viewdetail3.css' %}">
+{% endblock %}
+
+{% block body %}
+
+    <header>
+        <h1>Event Decoration Services</h1>
+        <p>Transforming your events into unforgettable experiences</p>
+    </header>
+
+    <section class="gallery">
+        <h2>Our Decorations</h2>
+        <div id="context">
+            {{ decoration.description }}
+            <!-- At HK Events, we understand that decoration is the heartbeat of any event, setting the tone and creating an unforgettable atmosphere. Our expert team specializes in transforming spaces into stunning visual experiences that reflect your unique vision and style. From elegant floral arrangements and sophisticated lighting to themed decor and personalized touches, we meticulously curate every detail to ensure your event is not only beautiful but also memorable. Whether you’re planning a grand wedding, a corporate gala, or an intimate gathering, our innovative designs and creative concepts will elevate your event, leaving a lasting impression on your guests. Let us help you bring your dream event to life with our exceptional decoration services. -->
+        </div>
+        <div class="gallery-container">
+            {% for data in decoration %}
+                <div class="gallery-item">
+                    <img src="{{ data.image.url }}" alt="Decoration 2">
+                    <h3>{{ data.name }}</h3>
+                </div>
+            {% endfor %}
+
+        </div>
+    </section>
+
+    <footer>
+        <a href="{% url 'Eventapp:contact' %}"> <button class="book-now">Contact Us</button></a>
+    </footer>
+
+{% endblock %}

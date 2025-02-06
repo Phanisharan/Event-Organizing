@@ -1,0 +1,119 @@
+{% extends 'Base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'css/Home.css' %}">
+{% endblock %}
+
+
+
+{% block body %}
+<div id="video_container" >
+    <iframe 
+    id="iframe_video" 
+    src="https://player.vimeo.com/video/890204256?muted=1&autoplay=1&loop=1&background=1&app_id=122963" 
+    frameborder="0" 
+    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media">
+</iframe>
+
+</div>
+
+<div id="second_container">
+
+    <div id="the_heading">
+        <h2 id="the_heading_content">WELCOME TO HK EVENTS WHERE EVERY MOMENT IS CHERISHED AND EVERY MEMORY IS CRAFTED WITH CARE! </h2>
+    </div>
+
+    <div id="about_container">
+
+
+        <div class="circle-container">
+            <div class="circle">
+                <video autoplay muted loop>
+                    <source src="../static/videos/wedvideo3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="glass-overlay"></div>
+            </div>
+        </div>
+        
+
+        
+        <div id="about_content" class="about">
+            <p class="about_para">At HK Events, we bring harmony to the whirlwind of wedding planning ideas and dreams.</p>
+            <p class="about_para">Our team knows how crucial your wedding day is. We go beyond planning and become part of your family, making your dream day stress-free and memorable.</p>
+            <p class="about_para">We handle everything from legal paperwork to creating unique wedding designs. Whether it’s a civil, symbolic, or traditional religious wedding, we stay by your side to ensure everything goes perfectly.</p>
+            <p class="about_para">What sets us apart is our network of venues, restaurants, concierge services, accommodations, equipment rentals, and transportation. We provide everything you need with exclusive discounts, so you don't have to search around.</p>
+            <p class="about_para">Trust HK Events to make your special day flawless and unforgettable.</p>
+        </div>
+    </div>
+
+    <div class="line" id="line_two"></div>
+</div>
+
+
+<div class="grid">
+    <div class="track-top">
+        {% for image in gallery_data %}
+            <div class="item" style="background-image: url('{{ image.gallery_images.url }}');"></div>
+        {% endfor %}
+
+    </div>
+
+    <div class="track-bottom">
+        {% for image in gallery_data2 %}
+            <div class="item item-fast" style="background-image: url('{{ image.gallery_images.url }}');"></div>
+        {% endfor %}
+    </div>
+</div>
+
+
+<div id="the_heading">
+    <h2 id="the_heading_content">WHAT WE OFFER</h2>
+</div>
+
+
+<div id="event_conatiner">
+
+    <div class="events">
+        <img src="https://thediamondrock.com/wp-content/uploads/2024/11/love-cave.jpg"  alt="">
+        <a href="{% url 'Eventapp:gallery' %}"><span class="event_lists">Gallery</span></a>
+    </div>
+    <div class="events">
+        <img src="https://thediamondrock.com/wp-content/uploads/2024/11/whatweoffer_madame_venue.jpg"  alt="">
+       <a href="{% url 'Eventapp:venue' %}"><span class="event_lists">Stories</span></a>
+    </div>
+    <div class="events">
+        <img src="https://thediamondrock.com/wp-content/uploads/2024/11/whatweoffer_wonderland.jpg"  alt="">
+        <a href="{% url 'Eventapp:contact' %}"><span class="event_lists">Contact</span></a>
+    </div>
+</div>
+
+
+<div class="slideshow">
+    {% for card in card_data %}
+        <div class="slide">
+            <div class="card image-card">
+                <img src="{{ card.card_images.url }}" alt="Wedding Image">
+            </div>
+            <div class="card content-card">
+                <p class="card-contnet date">- {{ card.marraige_date }} -</p>
+                <p class="card-content">
+                    {{ card.card_text }}
+                </p>
+                <p class="card-contnet couple-names">- {{ card.couple_names }} -</p>
+            </div>
+        </div>
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock %}

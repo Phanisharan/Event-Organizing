@@ -1,0 +1,156 @@
+{% extends 'admin/Base.html' %}
+
+
+
+{% block title %}
+    Custom Admin
+{% endblock %}
+
+
+
+
+{% block style %}
+
+<style>
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .form-section {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form button {
+            align-self: flex-start;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #399f52;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #318945;
+        }
+
+    </style>
+{% endblock %}
+
+
+{% block body %}
+
+    <h1>Custom Admin - Manage Records</h1>
+
+    <div class="form-section">
+        <h2>Add New Card</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ card_form.as_p }}
+            <button type="submit" name="card_submit">Upload</button>
+        </form>
+    </div>
+
+    <div class="form-section">
+        <h2>Add New Image</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ gallery_form.as_p }}
+            <button type="submit" name="gallery_submit">Upload</button>
+        </form>
+    </div>
+
+    <div class="form-section">
+        <h2>Add New Service</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ services_form.as_p }}
+            <button type="submit" name="services_submit">Upload</button>
+        </form>
+    </div>
+
+    <div class="form-section">
+        <h2>Venue</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ venue_form.as_p }}
+            <button type="submit" name="venue_submit">Upload</button>
+        </form>
+    </div>
+
+    <div class="form-section">
+        <h2>Ocassion</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ ocassion_form.as_p }}
+            <button type="submit" name="ocassion_submit">Upload</button>
+        </form>
+    </div>
+
+    <div class="form-section">
+        <h2>Decoration</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ decoration_form.as_p }}
+            <button type="submit" name="decoration_submit">Upload</button>
+        </form>
+    </div>
+
+
+    <div class="form-section">
+        <h2>Photography</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ photography_form.as_p }}
+            <button type="submit" name="photography_submit">Upload</button>
+        </form>
+    </div>
+
+
+    <div class="form-section">
+        <h2>Add New Package</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ packages_form.as_p }}
+            <button type="submit" name="packages_submit">Upload</button>
+        </form>
+    </div>
+
+    <div class="form-section">
+        <h2>Add New Couple Moment</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ couplemoments_form.as_p }}
+            <button type="submit" name="couplemoments_submit">Upload</button>
+        </form>
+    </div>
+
+    <div class="form-section">
+        <h2>Wedding Galleries</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ weddinggallery_form.as_p }}
+            <button type="submit" name="weddinggallery_submit">Upload</button>
+        </form>
+    </div>
+
+
+{% endblock %}

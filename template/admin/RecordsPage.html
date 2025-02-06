@@ -1,0 +1,200 @@
+{% extends 'admin/Base.html' %}
+
+{% block style %}
+
+    <style>
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+    
+        .records-section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 20px;
+        }
+    
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    
+        li {
+            padding: 10px;
+            background: #f9f9f9;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        li a {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background: #399f52;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+    
+        li a:hover {
+            background: #318945;
+        }
+    </style>
+
+{% endblock %}
+    
+{% block body %}
+
+    <h1>Custom Admin - Existing Records</h1>
+
+    <div class="records-section">
+        <h2>Existing Records</h2>
+
+        <h3>Cards</h3>
+        <ul>
+            {% for card in cards %}
+                <li>
+                    {{ card.couple_names }} - {{ card.marraige_date }}
+                    <div>
+                        <a href="{% url 'Eventapp:edit_record' model='card' id=card.id %}">Edit</a>
+                        <a href="{% url 'Eventapp:delete_record' model='card' id=card.id %}">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Gallery Images</h3>
+        <ul>
+            {% for gallery in galleries %}
+                <li>
+                    {{ gallery.gallery_images }}
+                    <div>
+                        <a href="{% url 'Eventapp:edit_record' model='gallery' id=gallery.id %}">Edit</a>
+                        <a href="{% url 'Eventapp:delete_record' model='gallery' id=gallery.id %}">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Services</h3>
+        <ul>
+            {% for service in services %}
+                <li>
+                    {{ service.service_name }}
+                    <div>
+                        <a href="{% url 'Eventapp:edit_record' model='services' id=service.id %}">Edit</a>
+                        <a href="{% url 'Eventapp:delete_record' model='services' id=service.id %}">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Venue</h3>
+        <ul>
+            {% for venue in venues %}
+                <li>
+                    {{ venue.name }}
+                    <div>
+                        <a href="{% url 'Eventapp:edit_record' model='venue' id=venue.id %}">Edit</a>
+                        <a href="{% url 'Eventapp:delete_record' model='venue' id=venue.id %}">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+
+
+        <h3>Ocassion</h3>
+        <ul>
+            {% for ocassion in ocassions %}
+                <li>
+                    {{ ocassion.name }}
+                    <div>
+                        <a href="{% url 'Eventapp:edit_record' model='ocassion' id=ocassion.id %}">Edit</a>
+                        <a href="{% url 'Eventapp:delete_record' model='ocassion' id=ocassion.id %}">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+
+        <h3>Decoration</h3>
+        <ul>
+            {% for decoration in decorations %}
+                <li>
+                    {{ decoration.name }}
+                    <div>
+                        <a href="{% url 'Eventapp:edit_record' model='decoration' id=decoration.id %}">Edit</a>
+                        <a href="{% url 'Eventapp:delete_record' model='decoration' id=decoration.id %}">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Photography</h3>
+        <ul>
+            {% for photography in photographys %}
+                <li>
+                    {{ photography.name }}
+                    <div>
+                        <a href="{% url 'Eventapp:edit_record' model='photography' id=photography.id %}">Edit</a>
+                        <a href="{% url 'Eventapp:delete_record' model='photography' id=photography.id %}">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+
+
+        <h3>Packages</h3>
+        <ul>
+            {% for package in packages %}
+                <li>
+                    {{ package.title }}
+                    <div>
+                        <a href="{% url 'Eventapp:edit_record' model='packages' id=package.id %}">Edit</a>
+                        <a href="{% url 'Eventapp:delete_record' model='packages' id=package.id %}">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h3>Couple Moments</h3>
+        <ul>
+            {% for couplemoment in couplemoments %}
+                <li>
+                    {{ couplemoment.names }}
+                    <div>
+                        <a href="{% url 'Eventapp:edit_record' model='couplemoments' id=couplemoment.id %}">Edit</a>
+                        <a href="{% url 'Eventapp:delete_record' model='couplemoments' id=couplemoment.id %}">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h2>Wedding Galleries</h2>
+        <ul>
+            {% for gal in weddinggalleries %}
+                <li>
+                    {{ gal.names }}
+                    <div>
+                        <a href="{% url 'Eventapp:edit_record' model='weddinggallery' id=gal.id %}">Edit</a>
+                        <a href="{% url 'Eventapp:delete_record' model='weddinggallery' id=gal.id %}">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

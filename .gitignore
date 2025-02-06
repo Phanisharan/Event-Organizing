@@ -1,0 +1,31 @@
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment files
+.env
+.venv/
+venv/
+
+# Ignore dependencies (if using virtualenv)
+env/
+*.egg-info/
+dist/
+build/
+
+# Ignore static and media files
+staticfiles/
+media/
+*.log
+
+
+# Ignore IDE/editor-specific files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Ignore large dependency directories (if applicable)
+node_modules/

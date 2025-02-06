@@ -1,0 +1,126 @@
+{% extends 'Base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Contact
+{% endblock %}
+
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'css/Contact.css' %}">
+{% endblock %}
+
+
+{% block body %}
+ 
+       
+        <div id="session">
+            <span class="s1">BOOK SESSION</span><br><br>
+            <div style="line-height: 0.1rem;">HK EVENTS</div><br>
+            <button id="b1">Book</button>
+        </div>
+
+        <div id="div2"></div>
+
+        <div id="div3">
+            <span id="s3">GET IN TOUCH</span><br>
+            <span id="s4">HK EVENTS</span>
+        </div>
+
+        <div id="form_container">
+            <form id="details1" method="post">
+                {% csrf_token %}
+                <div class="form-row">
+                    <div>
+                        <label for="name">NAME*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="surname">SURNAME*</label>
+                        <input type="text" id="surname" name="surname" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="email">EMAIL*</label>
+                        <input type="text" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="phone">PHONE*</label>
+                        <input type="text" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="date">DATE*</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div>
+                        <label for="guests">GUESTS*</label>
+                        <input type="text" id="guests" name="guests" required>
+                    </div>
+                </div>
+                <div class="form-row full-width">
+                    <label for="country">COUNTRY*</label>
+                    <input style="padding-top: 5%;" type="text" id="country" name="country" required>
+                </div>
+                <div class="form-row full-width">
+                    <label for="message">MESSAGE*</label>
+                    <textarea type="text" id="message" name="message" required></textarea>
+                </div>
+                <div id="submit-btn">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+
+
+        <div id="div1">
+
+            <div id="home_contact">
+                <a href="{% url 'Eventapp:home' %}"><div class="span1"> HOME </div></a> <div> >> </div> <div class="span1"> CONTACT </div>
+            </div>
+
+            <div id="details">
+
+                <div class="add_div" id="address">
+                    <ul type="None">
+                        <li class="list1">ADDRESS</li>
+                        <li class="list1">PHONE</li>
+                        <li class="list1">MOBILE</li>
+                        <li class="list1">HEAD OFFICE</li>
+                        <li class="list1">ASSOCIATES</li>
+                        <li class="list1">CONCIERGE</li>
+                        <li class="list1">LOVE CAVE</li>
+                        <li class="list1">WONDERLAND</li>
+                        <li class="list1">ACCOMMODATIONS</li>
+                    </ul>
+                </div>
+
+                <div class="add_div" id="mail">
+                    <ul type="None">
+                        <li class="list2">P.O.Box 45, Musheerabad, Telangana, India</li>
+                        <li class="list2">+91 8003412331</li>
+                        <li class="list2">+91 9086753512</li>
+                        <li class="list2">info@hkevents.com</li>
+                        <li class="list2">planning@hkevents.com</li>
+                        <li class="list2">reservations@hkevents.com</li>
+                        <li class="list2">info@lovecavehkevents.com</li>
+                        <li class="list2">info@santoriniweddhkevents.com</li>
+                        <li class="list2">info@archouses.com</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <script>
+            document.getElementById("b1").addEventListener("click", function () {
+                document.getElementById("form_container").scrollIntoView({ behavior: "smooth" });
+            });
+        </script>
+
+{% endblock %}

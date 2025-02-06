@@ -1,0 +1,42 @@
+{% extends 'Base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Venue
+{% endblock %}
+
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'css/details/Viewdetail1.css' %}">
+{% endblock %}
+
+{% block body %}
+
+{% load static %}
+
+    <header>
+        <h1>Venue</h1>
+    </header>
+
+    <section class="venue-details">
+        {% if venue %}
+            <p id="para">{{ venue.0.description }}</p>
+        {% endif %}
+        <div class="venue-images">
+            {% for data in venue %}
+                <div class="image-container">
+                    <img src="{{ data.image.url }}" alt="Venue Image">
+                    <p class="image-caption">{{ data.name }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    
+
+    <footer>
+        <a href="{% url 'Eventapp:contact' %}"><button class="book-now">Contact Us</button></a>
+    </footer>
+
+
+{% endblock %}

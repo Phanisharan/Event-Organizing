@@ -1,0 +1,29 @@
+{% extends 'Base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Wedding Stories
+{% endblock %}
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'css/details2/Viewdetail.css' %}">
+{% endblock %}
+
+{% block body %}
+    <header>
+        <img src="{{ wedding_data.0.heading_image.url }}" alt="Wedding Header Image">
+    </header>
+    <section class="about">
+        <h1>{{ couple_moment.names }}</h1>
+        <p> {{ wedding_data.0.description }}</p>
+    </section>
+    <section class="gallery">
+        <h2>Wedding Gallery</h2>
+        <div class="gallery-grid">
+            {% for gallery in wedding_data %}
+                <div class="card"><img src="{{ gallery.images.url }}" alt="Wedding Image"></div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

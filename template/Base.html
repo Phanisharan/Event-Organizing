@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    {% block static %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/Base.css' %}">
+    <script src="{% static 'javascript/Base.js' %}"></script>
+</head>
+<body>
+
+    <div id="nav_bar">
+        <img id="logo" src="{% static 'images/hkevent.png'%}" alt="">
+        <a href="{% url 'Eventapp:home' %}"><div class="navbar_content">HOME</div></a>
+<!--         <a href="{% url 'Eventapp:planning-services' %}"><div class="navbar_content">PLANNING SERVICES</div></a> -->
+        <a href="{% url 'Eventapp:venue' %}"><div class="navbar_content">WEDDING STORIES</div></a>
+        <a href="{% url 'Eventapp:gallery' %}"><div class="navbar_content">GALLERY</div></a>
+        <a href="{% url 'Eventapp:contact' %}"><div class="navbar_content">CONTACT</div></a>
+    </div>
+
+    {% block body %}
+    {% endblock %}
+
+    <div id="follow_up_container">
+        <div id="follow-up-content">FOLLOW US ON INSTAGRAM</div>
+        <a href="#" id="instagram_id">@HKevents</a>
+        <div id="color_container"></div>  
+
+        <div id="contact-container">
+            <div id="followus_container" class="follow_up_containers" style="border-right: 1px solid #84847c; padding-right: 10rem;">
+                <div id="followus_content" style="font-size: 1.35rem; letter-spacing: 0.2rem; color: #84847c; margin-top: 50px;">FOLLOW US</div>
+                <div style="margin-left: 12rem;">
+                    <img class="social_accounts" src="{% static 'images/facebook.png' %}" alt="">
+                    <div class="middle_line"></div>
+                    <img class="social_accounts" src="{% static 'images/instagram.png' %}" alt="">
+                    <div class="middle_line"></div>
+                    <img class="social_accounts" src="{% static 'images/youtube.png' %}" alt="">
+                </div>
+            </div>
+            <div id="the_content" class="follow_up_containers" style="border-right: 1px solid #84847c; padding-right: 8rem;">
+                <div style="font-size: 0.5rem; color: #fcb900; margin-top: 50px;">The</div>
+                <div style="font-size: 2rem; letter-spacing: 0.5rem; border-bottom: 1px solid #fcb9008f; color: #fcb900;">HK EVENTS</div>
+                <div><i style="font-size: 1.25rem; letter-spacing: -0.025rem; color: #fcb900; font-family: -apple-system">The ultimate event organizers</i></div>
+            </div>
+            <div id="get_in_touch" class="follow_up_containers">
+                <div style="font-size: 1.5rem; letter-spacing: 0.5rem; margin-top: 50px;">Get In Touch</div>
+                <div class="contact">+91 896033908</div>
+                <div class="contact">+91 694483322</div>
+                <div class="contact">info@thehkevents.com</div>
+                <div class="contact">planning@thehkevents.com</div>
+                <div class="contact">reservations@thehkevents.com</div>
+            </div>
+        </div>
+    </div>    
+    <p style="background-color: rgb(199, 187, 189); margin-bottom: 0; text-align: center; width: 100vw;">All Copy rights reserved @2025 | @hkevents.com </p>
+    <div id="back-to-top">
+        <img id="image-arrow" src="{% static 'images/uparrow.png' %}" alt="">
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+
+</body>
+</html>
+

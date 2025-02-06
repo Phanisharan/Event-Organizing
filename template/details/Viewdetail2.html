@@ -1,0 +1,60 @@
+{% extends 'Base.html' %}
+
+{% load static %}
+
+{% block title %}
+   Occassion
+{% endblock %}
+
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'css/details/Viewdetail2.css' %}">
+{% endblock %}
+
+{% block body %}
+
+    <header>
+        <h1>Your Perfect Occasion Awaits</h1>
+        <p>Choose your occasion</p>
+    </header>
+    <div id="context">
+        <p>{{ ocassion.description }}</p>
+    </div>
+    <main>
+        <div class="occasion-container">
+            {% for data in ocassion %}
+                <div class="occasion-card">
+                    <img src="{{ data.image.url }}" alt="Kitty Party" class="occasion-image">
+                    <h2>{{ data.name }}</h2>
+                    <p>{{ data.short_description }}</p>
+                </div>
+            {% endfor %}
+
+            <!-- <div class="occasion-card">
+                <img src="{% static 'images/marriage.jpg' %}" alt="Marriage" class="occasion-image">
+                <h2>Marriage</h2>
+                <p>Make your special day unforgettable with our expert planning.</p>
+            </div>
+            <div class="occasion-card">
+                <img src="{% static 'images/kitty-party.jpg' %}" alt="Kitty Party" class="occasion-image">
+                <h2>Kitty Party</h2>
+                <p>Enjoy a fun-filled kitty party with our unique themes and ideas.</p>
+            </div>
+            <div class="occasion-card">
+                <img src="{% static 'images/birthday-bash.jpg' %}" alt="Birthday Bash" class="occasion-image">
+                <h2>Birthday Bash</h2>
+                <p>Celebrate your birthday with style and joy, tailored just for you.</p>
+            </div>
+            <div class="occasion-card">
+                <img src="{% static 'images/haldi.jpg' %}" alt="Haldi" class="occasion-image">
+                <h2>Haldi</h2>
+                <p>Experience the vibrant traditions of Haldi with our special services.</p>
+            </div> -->
+        </div>
+    </main>
+
+    <footer>
+        <a href="{% url 'Eventapp:contact' %}"> <button class="book-now">Contact Us</button> </a>
+    </footer>
+
+{% endblock %}

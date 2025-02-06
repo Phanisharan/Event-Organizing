@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: fancy;
+    src: url(../../fonts/Cookie-Regular.ttf);
+}
+
+
+@font-face {
+    font-family: font3;
+    src: url(../../fonts/PoiretOne-Regular.ttf);
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    height: 500px;
+    background-image: url(../../images/venue.jpg);
+    background-size: cover; /* Changed to cover for better image scaling */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+h1 {
+    position: relative;
+    top: 35%;
+    font-size: 7em;
+    color: black;
+    font-family: fancy;
+}
+
+p {
+    font-size: 1.25rem;
+    padding: 5em;
+    
+}
+
+#para{
+    font-family: font3;
+    font-weight:900;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+}
+
+.venue-details {
+    padding: 20px;
+    text-align: center;
+}
+
+.venue-details h2 {
+    margin: 20px 0;
+    font-size: 2em }
+.venue-images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.image-container {
+    position: relative;
+    margin: 10px;
+}
+
+.venue-images img {
+    width: 300px;
+    height: 400px;
+    display: block;
+}
+
+.image-caption {
+    position: absolute; 
+    bottom: 10px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    color: white;
+    padding: 5px 10px; 
+    font-size: 1em; 
+    text-align: center; 
+}
+
+footer {
+    position: fixed; 
+    bottom: 20px;
+    left: 20px; 
+    z-index: 1000;
+}
+
+.book-now {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.book-now:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

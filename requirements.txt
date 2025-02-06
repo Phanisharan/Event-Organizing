@@ -1,0 +1,12 @@
+asgiref==3.8.1
+Django==5.1.5
+pillow==11.1.0
+sqlparse==0.5.3
+tzdata==2025.1
+whitenoise==6.8.2
+gunicorn==23.0.0
+PyMySQL==1.1.1
+cloudinary==1.42.1
+six==1.17.0
+urllib3==2.3.0
+certifi==2025.1.31

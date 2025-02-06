@@ -1,0 +1,124 @@
+{% extends 'Base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Planning Services
+{% endblock %}
+
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'css/planningServices.css' %}">
+{% endblock %}
+
+
+
+{% block body %}
+
+    <section class="hero">
+        <div class="hero-content">
+        <h1 id="event_heading">Our Event Planning</h1>
+        <p>Planning a event can be an exciting but also overwhelming experience. That's where event planners come in - we're like the fairy godmothers of weddings, birthday parties, Kitty parties etc waving their magic wand to make your dream event come to life!</p>
+        <div class="button-container">
+            <a href="{% url 'Eventapp:contact' %}" class="cta-button">Contact Us</a>
+            <a href="" class="whatsapp-button">WhatsApp</a>
+        </div>
+        </div>
+    </section>
+
+
+    <section class="planning-services">
+        <div class="container">
+        <h2 class="section-title" id="our">Our Planning Services</h2>
+        <div class="services-grid">
+    
+            {% for service in service_data %}
+              <div class="service-card">
+                <img src="{{ service.service_image.url }}" alt="Partial Planning" class="service-image">
+                <div class="service-info">
+                  <a href="{% url 'Eventapp:viewdetail' service.id %}"><h3 class="service-title">{{ service.service_name }}</h3></a> 
+                </div>
+              </div>
+            {% endfor %}
+
+        </div>
+        </div>
+    </section>
+
+    <section class="about-weddings">
+        <div class="container">
+          <h2 class="section-title">Event Plannings</h2>
+          <div class="about-wedding-content">
+            <div class="about-wedding-item">
+              <div class="about-wedding-images">
+                <img src="{% static 'images/party1.jpg' %}" alt="Wedding Image 1" class="about-wedding-image-medium">
+                <img src="{% static 'images/party2.jpg' %}" alt="Wedding Image 2" class="about-wedding-image-medium">
+                <img src="{% static 'images/party3.jpg' %}" alt="Wedding Image 3" class="about-wedding-image-medium">
+                <img src="{% static 'images/party6.jpg' %}" alt="Wedding Image 4" class="about-wedding-image-medium">
+                <img src="{% static 'images/party5.jpg' %}" alt="Wedding Image 5" class="about-wedding-image-medium">
+              </div>
+              <div class="about-wedding-info">
+                <h3 class="about-wedding-title">Event Celebrations</h3>
+                <div class="about-wedding-description">
+                  <h1>Wedding</h1>
+                  <p>A wedding is a sacred and joyous occasion where two individuals unite in marriage. It typically involves:</p>
+                  <ul>
+                    <li><b>Pre-Wedding Events:</b> Engagement party, bridal shower, bachelor/bachelorette parties, mehndi ceremony (in some cultures).</li>
+                    <li><b>Wedding Day Events:</b> The ceremony, cocktail hour, reception, cake cutting, first dance, and send-off.</li>
+                    <li><b>Post-Wedding Events:</b> After-party and brunch.</li>
+                  </ul>
+      
+                  <h1>Birthday</h1>
+                  <p>A birthday celebration marks the anniversary of someone's birth, filled with fun, love, and gratitude. Key elements include:</p>
+                  <ul>
+                    <li><b>Theme:</b> Based on the individual's interests or milestones.</li>
+                    <li><b>Decorations:</b> Balloons, banners, and themed décor.</li>
+                    <li><b>Activities:</b> Games, dances, and entertainment.</li>
+                    <li><b>Food & Cake:</b> A cake-cutting ceremony along with snacks or a full meal.</li>
+                  </ul>
+      
+                  <h1>Kitty Party</h1>
+                  <p>A kitty party is a social gathering, primarily for women, where they pool in money (kitty) and one member receives the collected amount. These parties typically include:</p>
+                  <ul>
+                    <li><b>Theme:</b> Often casual but can have fun themes like retro, floral, or seasonal.</li>
+                    <li><b>Games:</b> Fun and engaging activities, like bingo or quizzes.</li>
+                    <li><b>Food & Drinks:</b> Light snacks, tea, or a full meal depending on the timing.</li>
+                    <li><b>Networking:</b> A chance for friends to socialize and catch up.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<div id="event_container">
+    <div id="event_content">
+        <h3>Event Organizing</h3>
+        <p>
+            Event organizing involves meticulously planning, coordinating, and executing events to ensure they run smoothly and are memorable. Key steps include:
+
+            <p><b>Concept & Budget:</b> Define the event's purpose and set a budget.</p>
+            
+            <p><b>Venue & Invitations:</b> Choose an appropriate venue and send out invitations.</p>
+            
+            <p><b>Décor & Ambiance:</b> Design the theme, decorations, and setup.</p>
+            
+            <p><b>Catering:</b> Plan the menu and hire a catering service.</p>
+            
+            <p><b>Entertainment:</b> Arrange for music, performances, and activities.</p>
+            
+            <p><b>Logistics:</b> Coordinate transportation, seating, and scheduling.</p>
+            
+            <p><b>On-the-Day:</b> Oversee the setup and flow of the event.</p>
+            
+            <p><b>Post-Event:</b> Manage cleanup and gather feedback.</p>
+            
+            The goal is to create a seamless and enjoyable experience for all attendees, making the event a memorable occasion. If you need more details on any specific aspect, just let me know!
+        
+        </p>
+    </div>
+    <div id="event_image"><img style="width: 100%; height: 100%; object-fit: cover;" src="{% static 'images/planning.jpg' %}" alt="Wedding Traditions" id='img-last' ></div>
+</div>
+
+{% endblock %}

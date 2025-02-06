@@ -1,0 +1,731 @@
+@font-face {
+    font-family: fancy;
+    src: url(../fonts/Cookie-Regular.ttf);
+}
+
+@font-face {
+    font-family: font2;
+    src: url(../fonts/Aboreto-Regular.ttf);
+}
+
+@font-face {
+    font-family: font3;
+    src: url(../fonts/PoiretOne-Regular.ttf);
+}
+
+body {
+    
+    overflow-y: auto; 
+    
+}
+
+body{
+    overflow-x: hidden; 
+    width: 100%;
+}
+
+
+#div1 {
+    width: 100%;
+    height: 30rem;
+    background-image: url(../images/venue43.jpg);
+    background-size: cover;
+    filter: brightness(70%);
+}
+
+#div1 h1 {
+    font-family: fancy;
+    font-size: 5rem;
+    margin: 0 0 10px 0;
+    padding-top: 120px;
+    padding-left: 150px;
+    color: #fff;
+    text-shadow: 2px -2px 2px black;
+    font-weight: 700;
+}
+
+#div1 p {
+    font-family: fancy;
+    font-size: 1.8rem;
+    margin-left: 600px;
+    text-shadow: 5px -3px 5px rgb(2, 2, 2);
+    color: #fff; 
+    font-weight: 400;
+}
+
+
+#wed1 {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    z-index: 1
+}
+
+#div2 {
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+#div2_child1{
+    width: 25rem;
+    margin-top: auto;
+    box-shadow: 2px 2px 2px black;
+}
+
+#div2_child2 {
+    font-size: 0.80rem;
+    max-width: 100ch;
+}
+
+#diamond2 {
+    width: 100%;
+}
+
+#pre1 {
+    font-size: 1.15rem;
+    padding: 1em;
+    line-height: 1.6;
+    color: gray;
+    position: relative;
+    top: 5rem;
+}
+
+
+#linediv {
+    width: 100%;
+    height: 300px;
+}
+
+#hr1 {
+    position: relative;
+    top: 30px;
+    left: 50%;
+}
+
+#span_p {
+    position: relative;
+    left: 46%;
+    top: 60px;
+    letter-spacing: 8px;
+    font-size: 30px;
+}
+
+#p1 {
+    position: relative;
+    left: 30%;
+    top: 80px;
+    font-size: 22px;
+    color: gray;
+}
+
+#package {
+    width: 100%;
+    height: 560px;
+    background-color: white;
+}
+
+.pack {
+    width: 24%;
+    height: 80%;
+    border: 1px solid red;
+    float: left;
+    margin-left: 4%;
+    position: relative;
+    left: 6%;
+    top: 13%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pack:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.headings {
+    width: 100%;
+    height: 40px;
+    border: none;
+    position: relative;
+    top: 13%;
+    font-size: 23px;
+}
+
+.ol_pa {
+    text-align: center;
+}
+
+.day_venue {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    word-spacing: 0.1rem;
+    padding: 8em 2em;
+    color: gray;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s;
+}
+
+.overlay-content {
+    width: 500px;
+    max-width: 90%;  
+    background: #ffffff;  
+    padding: 25px; 
+    border-radius: 15px;  
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);  
+    text-align: center;
+
+}
+
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background: #ff4081;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+.btn-green {
+    background: #28a745;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+
+#find {
+    font-size: 1.05rem;
+    text-align: center;
+    color: gray;
+}
+
+#contact_us_button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    transform: translate(-50% -50%);
+    background-color: rgb(98, 249, 98);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    margin: 20px auto;
+    transform: translateX(-50%);
+}
+
+#contact_us_button:hover {
+    background-color: rgb(74, 247, 74);
+}
+
+
+#jasmine {
+    border: 1px solid gray;
+}
+
+#bouga {
+    border: 1px solid orange;
+}
+
+#span2_p {
+    position: relative;
+    left: 20%;
+    top: 60px;
+    letter-spacing: 10px;
+    font-size: 30px;
+}
+#pic_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
+.pic_wed {
+    width: 32vw; 
+    height: 55vh; 
+    position: relative;
+    filter: brightness(50%);
+    overflow: hidden; 
+    box-shadow: -2px 5px 2px black;
+    z-index: 2;
+}
+
+.pic_wed img { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: top; 
+}
+
+.event_lists {
+    position: absolute; 
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    color: white;
+    text-shadow: 3px 0 0 black;
+    font-weight: 400;
+    filter: brightness(100%);
+    font-size: 1.5rem;
+    max-width: 80ch;
+    text-align: center;
+    z-index: 3;
+}
+
+
+
+.pic_wed::after {
+    content: '';
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: whitesmoke;
+    transition: width 1s ease-in-out;
+}
+
+
+.pic_wed:hover::after {
+    width: 100%;
+}
+
+
+.pic_wed:hover {
+    transform: translateX(2px);
+}
+
+
+.pic_wed:hover img {
+    transform: translateX(2px);
+}
+
+
+.pic_wed:hover .event_lists {
+    text-shadow: 1px 1px 10px rgb(255, 255, 255);
+}
+
+
+.pic_wed:hover .event_lists::after {
+    width: 100%;
+}
+
+
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    top: 50px;
+    overflow: hidden;
+}
+
+
+.slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+    opacity: 0;
+}
+
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 40%;
+    height: 60%;
+    position: relative;
+}
+
+.image-card {
+    transform: translateX(20%) translateY(5%); 
+    z-index: 2; 
+}
+
+.image-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.content-card {
+    background-color: rgba(109, 244, 208, 0.367);
+    padding: 80px 0px;
+    font-family: font2;
+    text-align:center;
+    transform: translateX(-5%) translateY(-5%);
+    
+}
+
+.card-content{
+    font-size: 1rem;
+    margin-left: 8rem;
+    padding: 2em 1em;
+    text-align: center;
+    max-width: 40ch;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+@keyframes slideIn {
+    0% { transform: translateX(100%); opacity: 0; }
+    10% { transform: translateX(0); opacity: 1; }
+    40% { transform: translateX(0); opacity: 1; }
+    50% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(-100%); opacity: 0; }
+}
+
+.slide:nth-child(1) {
+    animation: slideIn 30s linear infinite;
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    animation: slideIn 30s linear infinite;
+    animation-delay: 10s;
+}
+
+.slide:nth-child(3) {
+    animation: slideIn 30s linear infinite;
+    animation-delay: 20s;
+}
+
+
+
+
+
+@media (max-width: 575.98px) {
+    #div1 {
+        height: 20rem;
+    }
+    #div1 h1{
+        display: none;
+    }
+    
+    #div1 p{
+        display: none;
+    }
+    #div2 {
+        flex-direction: column;
+    }
+    #div2_child1 {
+        width: 100%;
+    }
+    #div2_child2 {
+        display: none;
+    }
+    #pre1 {
+        display: none;
+    }
+    #package{
+        margin: 20px 0;
+    }
+    
+    #linediv {
+        display: none;
+    }
+    .pack {
+        width: 100%;
+        height: auto;
+        margin: 50px  0;
+        left: 0;
+        top: 0;
+    }
+    .headings {
+        font-size: 20px;
+    }
+    .day_venue {
+        padding: 4em 2em;
+    }
+    #span_p {
+        left: 40%;
+        font-size: 25px;
+    }
+    #p1 {
+        left: 25%;
+        font-size: 18px;
+    }
+    #span2_p {
+        left: 10%;
+        font-size: 25px;
+    }
+    .pic_wed {
+        width: 100%;
+        height: auto;
+    }
+    .event_lists {
+        font-size: 1.2rem;
+    }
+    .card {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+    .content-card {
+        padding: 40px 0;
+    }
+    .card-content {
+        font-size: 0.5rem;
+        margin: 0;
+        padding: 1em;
+    }
+}
+
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    #div1 {
+        height: 25rem;
+    }
+    #div1 h1{
+        display: none;
+    }
+    
+    #div1 p{
+        display: none;
+    }
+    #div2 {
+        flex-direction: column;
+    }
+    #div2_child1 {
+        width: 90%;
+    }
+    #div2_child2 {
+        display: none;
+    }
+    
+    #linediv {
+        display: none;
+    }
+    #pre1 {
+        display: none;
+    }
+    #package{
+        margin: 20px 0;
+    }
+    .pack {
+        width: 48%;
+        height: auto;
+         margin: 50px  10px;
+        left: 0;
+        top: 0;
+    }
+    .headings {
+        font-size: 21px;
+    }
+    .day_venue {
+        padding: 6em 4em;
+    }
+    #span_p {
+        left: 42%;
+        font-size: 27px;
+    }
+    #p1 {
+        left: 27%;
+        font-size: 20px;
+    }
+    #span2_p {
+        left: 15%;
+        font-size: 27px;
+    }
+    .pic_wed {
+        width: 48%;
+        height: auto;
+    }
+    .event_lists {
+        font-size: 1.3rem;
+    }
+    .card {
+        width: 48%;
+        height: auto;
+        margin: 1%;
+    }
+    .content-card {
+        padding: 60px 0;
+    }
+    .card-content {
+        font-size: 0.6rem;
+        margin: 0;
+        padding: 1.5em;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    #div1 {
+        height: 28rem;
+    }
+    #div1 h1{
+        display: none;
+    }
+    
+    #div1 p{
+        display: none;
+    }
+    #package{
+        margin: 20px 0;
+    }
+
+    #linediv {
+        display: none;
+    }
+    #div2_child2 {
+        display: none;
+    }
+    #pre1 {
+        display: none;
+    }
+    .pack {
+        width: 30%;
+        height: auto;
+         margin: 50px  20px;
+        left: 0;
+        top: 0;
+    }
+    .headings {
+        font-size: 22px;
+    }
+    .day_venue {
+        padding: 7em 6em;
+    }
+    #span_p {
+        left: 44%;
+        font-size: 28px;
+    }
+    #p1 {
+        left: 28%;
+        font-size: 21px;
+    }
+    #span2_p {
+        left: 17%;
+        font-size: 28px;
+    }
+    .pic_wed {
+        width: 30%;
+        height: auto;
+    }
+    .event_lists {
+        font-size: 1.4rem;
+    }
+    .card {
+        width: 48%;
+        height: auto;
+        margin: 1%;
+    }
+    .content-card {
+        padding: 70px 0;
+    }
+    .card-content {
+        font-size: 0.6rem;
+        margin: 0;
+        padding: 1.5em;
+    }
+}
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    #div1 {
+        height: 30rem;
+    }
+    #div1 h1{
+        display: none;
+    }
+    
+    #div1 p{
+        display: none;
+    }
+    /* #div2_child1 {
+        width: 60%;
+    } */
+    #div2_child2 {
+        display: none;
+    }
+    #pre1 {
+        display: none;
+    }
+    .pack {
+        width: 24%;
+        height: auto;
+        margin-left: 2%;
+        left: 0;
+        top: 0;
+    }
+    .headings {
+        font-size: 23px;
+    }
+    .day_venue {
+        padding: 8em 7em;
+    }
+    #span_p {
+        left: 46%;
+        font-size: 30px;
+    }
+    #p1 {
+        left: 30%;
+        font-size: 22px;
+    }
+    #span2_p {
+        left: 18%;
+        font-size: 30px;
+    }
+    .pic_wed {
+        width: 24%;
+        height: auto;
+    }
+    .event_lists {
+        font-size: 1.5rem;
+    }
+    .card {
+        width: 48%;
+        height: auto;
+        margin: 1%;
+    }
+    .content-card {
+        padding: 80px 0;
+    }
+    .card-content {
+        font-size: 0.6rem;
+        margin: 0;
+        padding: 2em 1em;
+    }
+}

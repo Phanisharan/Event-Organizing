@@ -1,0 +1,47 @@
+{% extends 'Base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Gallery
+{% endblock %}
+
+
+{% block static %}
+    <link rel="stylesheet" href="{% static 'css/Gallery.css' %}">
+{% endblock %}
+
+{% block body %}
+    <header>
+        <div id="heading">
+            <!-- <img style="width: 100px;" src="{static 'images/gallerywedding.png'}" alt=""> -->
+            <!-- <h1 id="heading_m">The HK EVENTS Marriage Gallery</h1> -->
+            <!-- <p style="font-size: 1rem;">Explore the moments captured from our events.</p> -->
+        </div>
+    </header>
+    <div id="heading1">
+        <h1>Celebrations At The Hk Events</h1>
+    </div>
+    <div id="data1">
+        <p>
+            Each pillar and each wall whispers tales of timeless love
+        </p>
+    </div>
+    <div id="data2">
+        <p>
+            Welcome to our gallery, where we showcase the vibrant moments and unforgettable experiences crafted by our dedicated team at HK Events. Here, you’ll find a curated collection of images that capture the essence of our events, from elegant weddings and corporate gatherings to lively festivals and intimate celebrations. Each photo tells a story of creativity, meticulous planning, and the joy of bringing people together. We believe that every event is unique, and our gallery reflects our commitment to excellence and attention to detail. Explore our visual journey and get inspired for your next event.
+        </p>
+    </div>
+    <main>
+        <div class="gallery">
+            {% for image in gallery_data %}
+            <div class="gallery-item">
+                <img src="{{ image.gallery_images.url }}" alt="Event 1">
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <div id="image_container">
+        <p id="text">Create your own unforgettable moments</p>
+    </div>
+{% endblock %}

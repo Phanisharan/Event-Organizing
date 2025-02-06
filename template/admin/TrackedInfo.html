@@ -1,0 +1,87 @@
+{% extends 'admin/Base.html' %}
+
+{% block title %}
+    Tracked Info
+{% endblock %}
+
+{% block style %}
+    <style>
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .entry {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .entry h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .entry p {
+            margin: 5px 0;
+        }
+
+        .entry strong {
+            color: #333;
+        }
+
+        #del_button a {
+            margin-right: 10px;
+            padding: 5px 10px;
+            background: rgb(251, 79, 79);
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+    
+        #del_button a:hover {
+            background: rgb(232, 42, 42);
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+
+
+    <div class="container">
+        <h1>Tracked Information</h1>
+
+        {% for contact in contact_entries %}
+        <div class="entry">
+            <h2>{{ contact.name }} {{ contact.surname }}</h2>
+            <p><strong>Email:</strong> {{ contact.email }}</p>
+            <p><strong>Phone:</strong> {{ contact.phone }}</p>
+            <p><strong>Date:</strong> {{ contact.date }}</p>
+            <p><strong>Guests:</strong> {{ contact.guests }}</p>
+            <p><strong>Country:</strong> {{ contact.country }}</p>
+            <p><strong>Message:</strong> {{ contact.message }}</p>
+        </div>
+        <div id="del_button">
+            <a href="{% url 'Eventapp:delete_record' model='contacts' id=contact.id %}">Delete</a>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+{% endblock %}
