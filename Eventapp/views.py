@@ -45,13 +45,59 @@ def contact(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()
+            contact_entry = form.save()  # Save form data to the database
+            
+            # Extract user details
+            user_name = contact_entry.name
+            user_surname = contact_entry.surname
+            user_email = contact_entry.email
+            user_phone = contact_entry.phone
+            user_date = contact_entry.date
+            user_guests = contact_entry.guests
+            user_country = contact_entry.country
+            user_message = contact_entry.message
+
+            # Admin email details
+            admin_email = "djaaangooo34@gmail.com"  # Replace with actual admin email
+            subject_admin = "New Contact Form Submission"
+            message_admin = f"""
+            New contact form submission:
+
+            Name: {user_name} {user_surname}
+            Email: {user_email}
+            Phone: {user_phone}
+            Date of Contact: {user_date}
+            Guests: {user_guests}
+            Country: {user_country}
+            Message: {user_message}
+            """
+            send_mail(subject_admin, message_admin, settings.DEFAULT_FROM_EMAIL, [admin_email])
+
+            # User thank-you email
+            subject_user = "Thank You for Contacting Us!"
+            message_user = f"""
+            Dear {user_name},
+
+            Thank you for reaching out to us. We have received your message and will get back to you shortly.
+
+            Here are the details you provided:
+            Name: {user_name} {user_surname}
+            Email: {user_email}
+            Phone: {user_phone}
+            Guests: {user_guests}
+            Country: {user_country}
+
+            Best Regards,
+            HK Events 💕✨
+            """
+            send_mail(subject_user, message_user, settings.DEFAULT_FROM_EMAIL, [user_email])
+
             return redirect('Eventapp:thankyou')
         else:
             print("Form is not valid")
     else:
         print("Received GET request")
-    
+
     s1 = ContactForm()
     return render(request, 'Contact.html', {'form': s1})
 
