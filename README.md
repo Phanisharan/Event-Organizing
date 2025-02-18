@@ -5,7 +5,7 @@ This project helps in organizing events efficiently, allowing users to create, m
 
 ## Live App
 
-check out this live version of this app [here](https://hk-plum.vercel.app/)
+Check out this live version of this app [here](https://hk-plum.vercel.app/)
 
 ## Requirements
 To run this project, you'll need the following dependencies:
