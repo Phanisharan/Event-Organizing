@@ -3,6 +3,10 @@
 ## Description
 This project helps in organizing events efficiently, allowing users to create, manage, and participate in various events. Built with Django, it leverages MySQL for database management and Cloudinary for media storage.
 
+## Live App
+
+check out this live version of this app [here](https://hk-plum.vercel.app/)
+
 ## Requirements
 To run this project, you'll need the following dependencies:
 
