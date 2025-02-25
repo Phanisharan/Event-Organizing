@@ -70,27 +70,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'event_organizing_project.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-import pymysql
-pymysql.install_as_MySQLdb()
-
-
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',  # The name of your database
-        'USER': 'root',     # The MySQL user
-        'PASSWORD': 'NEmJafDMSZygYkJPPDmNOoRGBGHxqfGs',  # The MySQL password
-        'HOST': 'monorail.proxy.rlwy.net',  # The MySQL host
-        'PORT': '33319',    # The MySQL port
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  
     }
 }
+
 
 
 
